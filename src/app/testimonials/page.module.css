@@ -1,0 +1,145 @@
+.testimonialsPage {
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection {
+  position: relative;
+  padding: 8rem 1.5rem 4rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.orbs {
+  display: none;
+}
+
+.title {
+  font-family: var(--font-header);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Filter Bar */
+.filterSection {
+  background: var(--bg-surface);
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.825rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s;
+}
+
+.filterBtn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(27, 94, 32, 0.05);
+}
+
+.filterBtnActive {
+  background: var(--cyan);
+  color: #ffffff;
+  border-color: var(--cyan);
+  font-weight: 700;
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+/* Reviews Grid */
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem !important;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.quoteWrapper {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.06);
+  border: 1px solid var(--border-glow-violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quoteIcon {
+  color: var(--violet);
+}
+
+.reviewText {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.authorName {
+  display: block;
+  font-family: var(--font-header);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.authorMeta {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+}

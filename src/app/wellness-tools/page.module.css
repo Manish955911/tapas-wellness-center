@@ -1,0 +1,322 @@
+.wellnessPage {
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection {
+  position: relative;
+  padding: 8rem 1.5rem 4rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orb1 {
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+  filter: blur(55px);
+  animation: float 9s ease-in-out infinite alternate;
+}
+
+.orb2 {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, var(--violet-glow) 0%, transparent 70%);
+  filter: blur(45px);
+  animation: float 7s ease-in-out infinite alternate-reverse;
+}
+
+.title {
+  font-family: var(--font-header);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Main Grid Layout */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.rightCol {
+  position: sticky;
+  top: 100px;
+}
+
+.widgetWrapper {
+  width: 100%;
+}
+
+.remedyFinderCard {
+  padding: 2.5rem !important;
+}
+
+.widgetHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.5rem;
+}
+
+.inputLabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.selectInput {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(44, 62, 80, 0.15);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.selectInput:focus {
+  border-color: var(--cyan);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.remedyResult {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 2rem;
+}
+
+.remedyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.sectionHeading {
+  color: var(--text-primary);
+  font-family: var(--font-header);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.asanasList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.asanasList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.herbsBox {
+  background: rgba(27, 94, 32, 0.04);
+  border: 1px dashed var(--border-glow-cyan);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.herbsBox p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.tableWrapper {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.dietTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.dietTable th {
+  background: var(--bg-surface);
+  color: var(--cyan);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dietTable td {
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  line-height: 1.5;
+}
+
+.dietTable tr:last-child td {
+  border-bottom: none;
+}
+
+.emptyRemedyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Booking Card */
+.bookingCard {
+  background: #ffffff !important;
+  color: #0c1424 !important;
+}
+
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.radioLabel strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #0c1424;
+}
+
+.radioLabel small {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+.radioSelected {
+  border-color: var(--violet);
+  background: rgba(139, 92, 246, 0.06);
+}
+
+.radioInput {
+  margin-top: 0.2rem;
+}
+
+.textInput, .textareaInput {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: #0c1424;
+  font-size: 0.92rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.textInput:focus, .textareaInput:focus {
+  border-color: var(--violet);
+}
+
+/* Disclaimer */
+.disclaimer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  border-left: 4px solid var(--amber) !important;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+/* Animations */
+.fadeIn {
+  animation: fade-in 0.4s ease;
+}
+
+@media (max-width: 992px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+  .rightCol {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .remedyFinderCard {
+    padding: 1.5rem !important;
+  }
+  .remedyGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .disclaimer {
+    flex-direction: column;
+    text-align: center;
+  }
+}

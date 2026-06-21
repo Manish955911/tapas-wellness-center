@@ -1,0 +1,229 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(253, 251, 247, 0.85); /* transparent warm cream */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.scrolled {
+  background: #FDFBF7;
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 20px rgba(44, 62, 80, 0.04);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: padding 0.3s ease;
+}
+
+.scrolled .container {
+  padding: 0.85rem 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.desktopMenu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--cyan);
+  background: rgba(27, 94, 32, 0.05);
+}
+
+.activeLink {
+  color: #ffffff !important;
+  background: var(--cyan);
+}
+
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+/* Mobile Dropdown styling */
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #FDFBF7;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.mobileNavLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.mobileNavLink:hover {
+  color: var(--cyan);
+  background: var(--bg-surface);
+}
+
+.mobileActiveLink {
+  color: #ffffff;
+  background: var(--cyan);
+  font-weight: 600;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .desktopMenu {
+    display: none;
+  }
+  .mobileMenuBtn {
+    display: block;
+  }
+}
+
+/* Explore Dropdown Styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.dropdownBtn:hover {
+  color: var(--cyan);
+  background: rgba(27, 94, 32, 0.05);
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #FDFBF7;
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  min-width: 170px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  z-index: 1001;
+  margin-top: 0.5rem;
+}
+
+.dropdownMenu::before {
+  content: '';
+  position: absolute;
+  top: -0.6rem;
+  left: 0;
+  right: 0;
+  height: 0.6rem;
+  background: transparent;
+}
+
+.dropdown:hover .dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dropdownLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: 0.35rem;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.dropdownLink:hover {
+  color: var(--cyan);
+  background: var(--bg-surface);
+}
+
+.dropdownActiveLink {
+  color: #ffffff;
+  background: var(--cyan);
+}
+
+.mobileSectionTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 0 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.mobileGridLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}

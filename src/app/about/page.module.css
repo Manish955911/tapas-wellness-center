@@ -1,0 +1,227 @@
+.aboutPage {
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection {
+  position: relative;
+  padding: 8rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+.orbs {
+  display: none;
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-header);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--cyan);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.imageContainer {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.imageContainer:hover .image {
+  transform: scale(1.05);
+}
+
+.imageGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(27, 94, 32, 0.25) 100%);
+  pointer-events: none;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.cardTitle {
+  color: var(--text-primary);
+  font-family: var(--font-header);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.cardDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Limbs Accordion Layout */
+.limbsWrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.limbsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.limbItem {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.limbItem:hover {
+  border-color: var(--border-glow-violet);
+  background: rgba(139, 92, 246, 0.04);
+}
+
+.limbActive {
+  border-color: var(--violet);
+  background: rgba(139, 92, 246, 0.08);
+  box-shadow: var(--shadow-glow-violet);
+}
+
+.limbHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.limbNum {
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--violet);
+  opacity: 0.8;
+}
+
+.limbTitleContainer {
+  flex-grow: 1;
+}
+
+.limbName {
+  color: var(--text-primary);
+  font-family: var(--font-header);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.limbTranslate {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.limbIcon {
+  color: var(--text-muted);
+}
+
+.limbContent {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  animation: fade-in 0.3s ease;
+}
+
+.limbDetailsCard {
+  position: sticky;
+  top: 100px;
+  animation: fade-in 0.4s ease;
+}
+
+.detailsHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.largeNum {
+  font-family: var(--font-header);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--violet);
+  line-height: 1;
+  text-shadow: 0 0 20px var(--violet-glow);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .limbsWrapper {
+    grid-template-columns: 1fr;
+  }
+  .limbDetailsCard {
+    display: none; /* Hide sticky panel on smaller screens since accordion expands inline */
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1.05rem;
+  }
+}

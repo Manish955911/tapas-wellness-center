@@ -1,0 +1,316 @@
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  overflow: hidden;
+  padding: 8rem 2rem 4rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 1;
+  transform: scale(1.08);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.heroBgActive {
+  opacity: 1;
+  z-index: 2;
+  transform: scale(1.02);
+  transition: opacity 1.5s ease, transform 7s ease-out;
+}
+
+.heroOverlay {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 3;
+}
+
+.heroOrbs { display: none; }
+
+.orb1, .orb2, .orb3 { display: none; }
+
+.sacredFloats { display: none; }
+
+.floatSymbol { display: none; }
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slideContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slideActive {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slideBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(243, 156, 18, 0.6);
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(243, 156, 18, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: #F39C12;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-family: var(--font-header);
+  font-size: 3.8rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+.heroSubtitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--emerald);
+  padding-left: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.heroDesc {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 750px;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroCtas {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.slideIndicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 15;
+}
+
+.indicator {
+  width: 24px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicatorActive {
+  background: var(--cyan);
+  width: 40px;
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.slideNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.3s;
+  backdrop-filter: blur(8px);
+}
+
+.slideNav:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: var(--violet);
+  color: var(--violet);
+  box-shadow: var(--shadow-glow-violet);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.therapyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.therapyIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(27, 94, 32, 0.08);
+  border: 1px solid var(--border-glow-cyan);
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.statsSection {
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-surface) 100%);
+  padding: 4rem 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.statValue {
+  font-family: var(--font-header);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--cyan);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.newsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.ctaSection {
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-deep) 100%);
+  border-top: 1px solid var(--border-subtle);
+  padding: 6rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+  .heroSubtitle {
+    font-size: 1.05rem;
+  }
+  .heroDesc {
+    font-size: 0.95rem;
+  }
+  .slideNav {
+    display: none;
+  }
+}
