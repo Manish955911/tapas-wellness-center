@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS gallery (
     id TEXT PRIMARY KEY,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     title TEXT NOT NULL,
-    desc TEXT DEFAULT '',
+    "desc" TEXT DEFAULT '',
     img TEXT NOT NULL,
     tag TEXT DEFAULT 'varanasi',
     "tagLabel" TEXT DEFAULT 'Varanasi Center'
