@@ -297,6 +297,7 @@ function getSupabaseTable(type) {
 function mapToSupabaseFields(type, record) {
   if (type === 'contact_submissions') {
     return {
+      id: record.id,
       first_name: record.firstName || record.first_name || '',
       last_name: record.lastName || record.last_name || '',
       email: record.email || '',
@@ -309,6 +310,7 @@ function mapToSupabaseFields(type, record) {
   }
   if (type === 'class_registrations') {
     return {
+      id: record.id,
       first_name: record.firstName || record.first_name || '',
       last_name: record.lastName || record.last_name || '',
       email: record.email || '',
@@ -323,6 +325,7 @@ function mapToSupabaseFields(type, record) {
   }
   if (type === 'newsletter_subscribers') {
     return {
+      id: record.id,
       email: record.email,
       is_active: record.is_active !== undefined ? record.is_active : true,
       created_at: record.created_at
